@@ -134,3 +134,14 @@ for char in story:
     elif in_quotes:
         sentence += char
 print(quoted_sentences)
+
+# Print story in 10-character chunks
+for i in range(0, len(story), 10):
+    print(story[i: i + 10])
+    
+    
+    # Print story in 30-character chunks using while loop
+index = 0
+while index < len(story):
+    print(story[index: index + 30])
+    index += 30
