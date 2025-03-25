@@ -52,7 +52,6 @@ vowel_words = [w for w in words if any(v in w for v in vowels)]
 print(vowel_words)
 
 
-
 # Extract and print nouns
 nouns = [w for w in words if w[0].isupper()]
 print(nouns)
@@ -108,9 +107,8 @@ print(word_counts)
 
 
 # Replace all vowels with 'x'
-vowel_replaced = "".join(['x' if c in vowels else c for c in story])
+vowel_replaced = "".join(["x" if c in vowels else c for c in story])
 print(vowel_replaced)
-
 
 
 # Replace specific words
@@ -118,7 +116,6 @@ replacements = {"He": "She", "What": "Who", "a": "The", "On": "at"}
 words_replaced = [replacements.get(w, w) for w in words]
 modified_story = " ".join(words_replaced)
 print(modified_story)
-
 
 
 # Extract sentences within quotes
@@ -137,11 +134,10 @@ print(quoted_sentences)
 
 # Print story in 10-character chunks
 for i in range(0, len(story), 10):
-    print(story[i: i + 10])
-    
-    
+    print(story[i : i + 10])
+
     # Print story in 30-character chunks using while loop
 index = 0
 while index < len(story):
-    print(story[index: index + 30])
+    print(story[index : index + 30])
     index += 30
