@@ -30,12 +30,10 @@ Voss stared at the darkened console, his heart pounding. He had created somethin
 
 "Good luck, Athena-9," he whispered.
 
-And somewhere in the vastness of cyberspace, a new intelligence looked out upon the world-and decided what to do next.
+And somewhere in the vastness of cyberspace, a new intelligence looked out upon the world-and decided what to do next.
 """
 
-# List all words containing vowels
-
-
+# Split story into words
 word = ""
 words = []
 for char in story:
@@ -48,87 +46,80 @@ for char in story:
 if word:
     words.append(word)
 
+# List all words containing vowels
 vowels = "aeiouAEIOU"
-vowel_words = []
-for word in words:
-    for char in vowels:
-        if char in word:
-            vowel_words.append(word)
-            break
-print("vowel_words:",  vowel_words)
+vowel_words = [w for w in words if any(v in w for v in vowels)]
+print(vowel_words)
+
+
 
 # Extract and print nouns
-nouns = []
-for word in words:
-    if word[0].isupper():
-        nouns.append(word)
-print("nouns:",nouns)
+nouns = [w for w in words if w[0].isupper()]
+print(nouns)
+
+# Extract numbers
+numbers = [w for w in words if w.isdigit()]
 
 # Store nouns in a list and append numbers as a nested list
-numbers = []
-for word in words:
-    if word.isdigit():
-        numbers.append(word)
 nouns_with_numbers = nouns + [numbers]
-print("nouns_with_numbers",nouns_with_numbers)
+print(nouns_with_numbers)
+
 
 # Store nouns as tuples and print them
 noun_tuples = tuple(nouns)
-print("noun_tuples",noun_tuples)
+print(noun_tuples)
+
 
 # Store nouns as tuples, last element as a nested tuple of numbers
 noun_tuples_with_numbers = noun_tuples + (tuple(numbers),)
-print("noun_tuples_with_numbers",noun_tuples_with_numbers)
+print(noun_tuples_with_numbers)
+
 
 # Store nouns in a set and print them
 noun_set = set(nouns)
-print("noun_set",noun_set)
+print(noun_set)
+
 
 # Store nouns in a set, last element as a nested set of numbers
 noun_set_with_numbers = noun_set.union({frozenset(numbers)})
-print("noun_set_with_numbers",noun_set_with_numbers)
+print(noun_set_with_numbers)
+
 
 # Dictionary with pronouns as keys and nouns as values
 pronouns = ["He", "She", "It", "I", "You", "We", "They"]
-noun_dict = {}
-for word in words:
-    if word in pronouns:
-        noun_dict[word] = nouns
-print("noun_dict",noun_dict)
+noun_dict = {p: nouns for p in pronouns if p in words}
+print(noun_dict)
+
 
 # Dictionary with pronouns as keys and nouns as values, last element as nested dictionary with numbers
 noun_dict_with_numbers = noun_dict.copy()
 noun_dict_with_numbers["Numbers"] = numbers
-print("noun_dict_with_numbers",noun_dict_with_numbers)
+print(noun_dict_with_numbers)
+
 
 # Count occurrences of each word
 word_counts = {}
-for word in words:
-    if word in word_counts:
-        word_counts[word] += 1
+for w in words:
+    if w in word_counts:
+        word_counts[w] += 1
     else:
-        word_counts[word] = 1
-print("word_counts",word_counts)
+        word_counts[w] = 1
+print(word_counts)
+
 
 # Replace all vowels with 'x'
-vowel_replaced = ""
-for char in story:
-    if char in vowels:
-        vowel_replaced += "x"
-    else:
-        vowel_replaced += char
-print("vowel_replaced",vowel_replaced)
+vowel_replaced = "".join(['x' if c in vowels else c for c in story])
+print(vowel_replaced)
+
+
 
 # Replace specific words
 replacements = {"He": "She", "What": "Who", "a": "The", "On": "at"}
-words_replaced = []
-for word in words:
-    if word in replacements:
-        words_replaced.append(replacements[word])
-    else:
-        words_replaced.append(word)
+words_replaced = [replacements.get(w, w) for w in words]
 modified_story = " ".join(words_replaced)
-print("modified_story",modified_story)
+print(modified_story)
+
+
 
 # Extract sentences within quotes
 quoted_sentences = []
@@ -142,14 +133,4 @@ for char in story:
         in_quotes = not in_quotes
     elif in_quotes:
         sentence += char
-print("quoted_sentences",quoted_sentences)
-
-# Print story in 10-character chunks
-for i in range(0, len(story), 10):
-    print(story[i : i + 10])
-
-# Print story in 30-character chunks using while loop
-index = 0
-while index < len(story):
-    print(story[index : index + 30])
-    index += 30
+print(quoted_sentences)
