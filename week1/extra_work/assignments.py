@@ -55,14 +55,14 @@ for word in words:
         if char in word:
             vowel_words.append(word)
             break
-print(vowel_words)
+print("vowel_words:",  vowel_words)
 
 # Extract and print nouns
 nouns = []
 for word in words:
     if word[0].isupper():
         nouns.append(word)
-print(nouns)
+print("nouns:",nouns)
 
 # Store nouns in a list and append numbers as a nested list
 numbers = []
@@ -70,23 +70,23 @@ for word in words:
     if word.isdigit():
         numbers.append(word)
 nouns_with_numbers = nouns + [numbers]
-print(nouns_with_numbers)
+print("nouns_with_numbers",nouns_with_numbers)
 
 # Store nouns as tuples and print them
 noun_tuples = tuple(nouns)
-print(noun_tuples)
+print("noun_tuples",noun_tuples)
 
 # Store nouns as tuples, last element as a nested tuple of numbers
 noun_tuples_with_numbers = noun_tuples + (tuple(numbers),)
-print(noun_tuples_with_numbers)
+print("noun_tuples_with_numbers",noun_tuples_with_numbers)
 
 # Store nouns in a set and print them
 noun_set = set(nouns)
-print(noun_set)
+print("noun_set",noun_set)
 
 # Store nouns in a set, last element as a nested set of numbers
 noun_set_with_numbers = noun_set.union({frozenset(numbers)})
-print(noun_set_with_numbers)
+print("noun_set_with_numbers",noun_set_with_numbers)
 
 # Dictionary with pronouns as keys and nouns as values
 pronouns = ["He", "She", "It", "I", "You", "We", "They"]
@@ -94,12 +94,12 @@ noun_dict = {}
 for word in words:
     if word in pronouns:
         noun_dict[word] = nouns
-print(noun_dict)
+print("noun_dict",noun_dict)
 
 # Dictionary with pronouns as keys and nouns as values, last element as nested dictionary with numbers
 noun_dict_with_numbers = noun_dict.copy()
 noun_dict_with_numbers["Numbers"] = numbers
-print(noun_dict_with_numbers)
+print("noun_dict_with_numbers",noun_dict_with_numbers)
 
 # Count occurrences of each word
 word_counts = {}
@@ -108,7 +108,7 @@ for word in words:
         word_counts[word] += 1
     else:
         word_counts[word] = 1
-print(word_counts)
+print("word_counts",word_counts)
 
 # Replace all vowels with 'x'
 vowel_replaced = ""
@@ -117,7 +117,7 @@ for char in story:
         vowel_replaced += "x"
     else:
         vowel_replaced += char
-print(vowel_replaced)
+print("vowel_replaced",vowel_replaced)
 
 # Replace specific words
 replacements = {"He": "She", "What": "Who", "a": "The", "On": "at"}
@@ -128,7 +128,7 @@ for word in words:
     else:
         words_replaced.append(word)
 modified_story = " ".join(words_replaced)
-print(modified_story)
+print("modified_story",modified_story)
 
 # Extract sentences within quotes
 quoted_sentences = []
@@ -142,7 +142,7 @@ for char in story:
         in_quotes = not in_quotes
     elif in_quotes:
         sentence += char
-print(quoted_sentences)
+print("quoted_sentences",quoted_sentences)
 
 # Print story in 10-character chunks
 for i in range(0, len(story), 10):
