@@ -174,13 +174,29 @@
 #         print(f"{key}: {value}")
 
 
-numbers = [2, 4, 6, 8, 10]
-result = list(map(lambda x: x * 7, numbers))
-print(result)
+# numbers = [2, 4, 6, 8, 10]
+# result = list(map(lambda x: x * 7, numbers))
+# print(result)
 
 
-words = ["sky", "tree", "azzzzzz","brrr", "cloud", "myth", "sun"]
-vowel_words = list(filter(lambda word: any(char in 'aeiouAEIOU' for char in word), words))
-print(vowel_words)
+# words = ["sky", "tree", "azzzzzz","brrr", "cloud", "myth", "sun"]
+# vowel_words = list(filter(lambda word: any(char in 'aeiouAEIOU' for char in word), words))
+# print(vowel_words)
+
+# from functools import reduce
+# numbers = [2,2,1,1,2,20]
+# # Multiply all numbers using reduce
+# product = reduce(lambda x, y: x * y, numbers)
+# print(product)
 
 
+class my_class:
+    def __init__(self,name):
+        self.name = name
+        print(f" Client  {self.name} is created")
+    def __del__(self):
+        
+        print(f"Person deleted with name: {self.name}")
+result = my_class("fatima")
+del result
+ 
