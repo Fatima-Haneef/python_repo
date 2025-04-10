@@ -191,12 +191,19 @@
 
 
 class my_class:
-    def __init__(self,name):
+  
+    agent_code = "A001"
+    serial_number = 1234567890
+    
+    def __init__(self,name,age):
         self.name = name
-        print(f" Client  {self.name} is created")
+        self.age = age
+        print(f" Client  {self.name} is created her age is {self.age}")
     def __del__(self):
+        print(f"Person deleted with name: {self.name} and age: {self.age}")
         
-        print(f"Person deleted with name: {self.name}")
-result = my_class("fatima")
+result = my_class("fatima",20)
+print(my_class.agent_code)
+print(my_class.serial_number)
 del result
  
