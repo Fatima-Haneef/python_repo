@@ -1,11 +1,9 @@
-
 #Create a Function
 def greet():
     print('Hello World!')
 
 # Function Call
 greet()
-
 
 
 # Next  run
@@ -38,7 +36,7 @@ def future_function():
     pass
 
 # this will execute without any action or error
-future_function() 
+future_function()
 
 
 # Next  run
@@ -92,7 +90,7 @@ def posFun(x, y, /, z):
     print(x + y + z)
 
 print("Evaluating positional-only arguments: ")
-posFun(33, 22, z=11) 
+posFun(33, 22, z=11)
 
 # Next  run
 print (" Next  run")
@@ -102,7 +100,7 @@ def posFun(*, num1, num2, num3):
     print(num1 * num2 * num3)
 
 print("Evaluating keyword-only arguments: ")
-posFun(num1=6, num2=8, num3=5) 
+posFun(num1=6, num2=8, num3=5)
 
 # Next  run
 print (" Next  run")
@@ -166,7 +164,7 @@ def sum( arg1, arg2 ):
 
 # Now you can call sum function
 sum( 10, 20 );
-print ("Outside the function global total : ", total) 
+print ("Outside the function global total : ", total)
 
 # Next  run
 print (" Next  run")
@@ -259,7 +257,7 @@ def SwapTwoNumbers(a,b):
     b = a-b
     a = a-b
     return a,b
-    
+
 a,b = SwapTwoNumbers(17,24)
 print("After Swap: ",a,b)
 
@@ -268,11 +266,11 @@ print("After Swap: ",a,b)
 # Next  run
 print (" Next  run")
 def function1():
-    p ="Hello Pythonista" 
+    p ="Hello Pythonista"
     def function2():
         print(p)
     function2()
-    
+
 function1()
 
 #optinal parameter example
@@ -280,7 +278,7 @@ function1()
 print (" Next  run")
 def Calendar(year,month,date=''):
     print(year,month,date)
-    
+
 Calendar(2023,2)
 
 Calendar(2023,2,14)
@@ -300,7 +298,7 @@ def palindromeCheck(num):
         print(temp, "is a palindrome number")
     else:
         print(temp, "is not a palindrome number")
-    
+
 
 palindromeCheck(131)
 palindromeCheck(34)
@@ -312,10 +310,10 @@ print (" Next  run")
 def factorial(n):
     fact = 1
     while(n!=0):
-        fact *= n 
+        fact *= n
         n = n-1
     print("The factorial is",fact)
-    
+
 inputNumber = int(input("Enter the number: "))
 factorial(inputNumber)
 
@@ -338,10 +336,10 @@ greeting('Quincy', 'Larson')
 # Next  run
 print (" Next  run")
 #
-# 
+#
 
 #Pass by Value and Pass by Reference in Python
-#Python’s argument-passing model is neither “Pass by Value” nor “Pass by Reference” but it is “Pass by Object Reference”. 
+#Python’s argument-passing model is neither “Pass by Value” nor “Pass by Reference” but it is “Pass by Object Reference”.
 #Depending on the type of object you pass in the function, the function behaves differently. Immutable objects show “pass by value” whereas mutable objects show “pass by reference”.
 
 def call_by_value(x):
@@ -389,7 +387,6 @@ modify_global()
 print(x)  # Output: 20
 
 
-
 def outer_function():
     y = 10  # Enclosing scope variable
 
@@ -407,12 +404,12 @@ outer_function()
 print (" Next  run")
 def fun1(): # outer function
     a = 45
-    
+
     def fun2(): # inner function
         nonlocal a  # allows modification of `a` from fun1
         a=54
         print(a)
-    
+
     fun2()
     print(a)
 
@@ -421,6 +418,3 @@ fun1()
 #Output
 #54
 #54
-
-
-
