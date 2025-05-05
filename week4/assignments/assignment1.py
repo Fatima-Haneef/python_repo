@@ -64,19 +64,19 @@ print(df.loc[[200305, 200207, 20000048]])
 print(df.loc[2020090:200121])
 
 # 11. Conditional selection of rows using .loc
-# “Sale Amount” greater then “202500”
+# “Sale Amount” greater than “202500”
 # , print the returned row and analyze results
 print(df.loc[df["Sale Amount"] > 202500])
 
 # 12. Conditional selection of rows using .loc
-# “Town” equal to “Ansonia”
+# “Town” equal to “Anson”
 # , print the returned row and analyze results.
 print(df.loc[df["Town"] == "Ansonia"])
 
 
 
 # 13. Conditional selection of rows using .loc
-# “Residential Type” equal to “Condo” and “Assessed Value” is equal to - less then 180500
+# “Residential Type” equal to “Condo” and “Assessed Value” is equal to - less than 180500
 # , print the returned row and analyze results.
 print(df.loc[(df["Residential Type"]=="Condo") & (df["Assessed Value"] < 180500)])
 
@@ -157,7 +157,6 @@ new_data = {
 }
 
 df.loc[len(df)] = new_data  
-
 print("\nUpdated DataFrame after adding a new row:")
 print(df)
 
