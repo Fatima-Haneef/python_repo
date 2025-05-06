@@ -190,20 +190,20 @@
 # print(product)
 
 
-class my_class:
+# class my_class:
   
-    agent_code = "A001"
-    serial_number = 1234567890
+#     agent_code = "A001"
+#     serial_number = 1234567890
     
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
-        print(f" Client  {self.name} is created her age is {self.age}")
-    def __del__(self):
-        print(f"Person deleted with name: {self.name} and age: {self.age}")
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+#         print(f" Client  {self.name} is created her age is {self.age}")
+#     def __del__(self):
+#         print(f"Person deleted with name: {self.name} and age: {self.age}")
         
-result = my_class("fatima",20)
-print(my_class.agent_code)
-print(my_class.serial_number)
-del result
+# result = my_class("fatima",20)
+# print(my_class.agent_code)
+# print(my_class.serial_number)
+# del result
  
