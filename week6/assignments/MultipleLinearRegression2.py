@@ -42,7 +42,7 @@ corr = df[independent_vars + [dependent_var]].corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm', linewidths=0.5)
 plt.title("Correlation Heatmap")
 plt.show()
-
+ 
 # Step 16: Train/Test Split
 X_train, X_test, y_train, y_test = train_test_split(X_imputed, y_array, test_size=0.1, random_state=42)
 
